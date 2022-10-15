@@ -1,5 +1,31 @@
 # Changelog
 
+## \[1.2.0]
+
+- Add new app-specific `BaseDirectory` enum variants `AppConfig`, `AppData`, `AppLocalData`, `AppCache` and `AppLog` along with equivalent functions in `path` module and deprecated ambiguous variants `Log` and `App` along with their equivalent functions in `path` module.
+  - [5d89905e](https://www.github.com/tauri-apps/tauri/commit/5d89905e39ce0e6eaaec50a693679335449edb32) feat(api): add app-specific directory APIs, closes [#5263](https://www.github.com/tauri-apps/tauri/pull/5263) ([#5272](https://www.github.com/tauri-apps/tauri/pull/5272)) on 2022-09-28
+- Set the correct mimetype when streaming files through `asset:` protocol
+  - [39443b43](https://www.github.com/tauri-apps/tauri/commit/39443b4350bd208c4d6eec5e1095f215199f8aa3) fix(core): set correct mimetype for asset protocol streams, closes [#5203](https://www.github.com/tauri-apps/tauri/pull/5203) ([#5210](https://www.github.com/tauri-apps/tauri/pull/5210)) on 2022-09-30
+- Escape glob special characters in files/directories when dropping files or using the open/save dialogs.
+  - [4cbdf0fb](https://www.github.com/tauri-apps/tauri/commit/4cbdf0fb1c0de5004eab51c36d5843a9816f18af) fix(core): escape glob characters in drop/dialogs , closes [#5234](https://www.github.com/tauri-apps/tauri/pull/5234) ([#5237](https://www.github.com/tauri-apps/tauri/pull/5237)) on 2022-10-05
+- Fixes resource reading being always rejected by the scope.
+  - [a06dc699](https://www.github.com/tauri-apps/tauri/commit/a06dc6993148f10ff7623c9dcc81f313dd960ad0) fix(core): canonicalize resource dir to fix scope check, closes [#5196](https://www.github.com/tauri-apps/tauri/pull/5196) ([#5218](https://www.github.com/tauri-apps/tauri/pull/5218)) on 2022-09-29
+- Readd the option to create an unfocused window via the `focused` method. The `focus` function has been deprecated.
+  - [4036e15f](https://www.github.com/tauri-apps/tauri/commit/4036e15f5af933bdc0d0913508b5103958afc143) feat(core): reimplement window initial focus flag, closes [#5120](https://www.github.com/tauri-apps/tauri/pull/5120) ([#5338](https://www.github.com/tauri-apps/tauri/pull/5338)) on 2022-10-08
+- Add `hidden_title` option for macOS windows.
+  - [321f3fed](https://www.github.com/tauri-apps/tauri/commit/321f3fed19df40c1223099bce953332b7f00f7a9) feat(macos): `title_bar_style` and `hidden_title` window options, closes [#2663](https://www.github.com/tauri-apps/tauri/pull/2663) ([#3965](https://www.github.com/tauri-apps/tauri/pull/3965)) on 2022-09-30
+- Add `App::show()`, `AppHandle::show()`, `App::hide()` and `AppHandle::hide()` for hiding/showing the entire application on macOS.
+  - [39bf895b](https://www.github.com/tauri-apps/tauri/commit/39bf895b73ec6b53f5758815396ba85dda6b9c67) feat(macOS): Add application `show` and `hide` methods ([#3689](https://www.github.com/tauri-apps/tauri/pull/3689)) on 2022-10-03
+- Fix a deadlock when modifying the menu in the `on_menu_event` closure.
+  - [ae65951b](https://www.github.com/tauri-apps/tauri/commit/ae65951bc477126b71816d77424f8167814bbe8d) fix(core): fix deadlock in `on_menu_event`, closes [#5254](https://www.github.com/tauri-apps/tauri/pull/5254) ([#5257](https://www.github.com/tauri-apps/tauri/pull/5257)) on 2022-09-28
+- - [7d9aa398](https://www.github.com/tauri-apps/tauri/commit/7d9aa3987efce2d697179ffc33646d086c68030c) feat: bump MSRV to 1.59 ([#5296](https://www.github.com/tauri-apps/tauri/pull/5296)) on 2022-09-28
+- Add `title_bar_style` option for macOS windows.
+  - [321f3fed](https://www.github.com/tauri-apps/tauri/commit/321f3fed19df40c1223099bce953332b7f00f7a9) feat(macos): `title_bar_style` and `hidden_title` window options, closes [#2663](https://www.github.com/tauri-apps/tauri/pull/2663) ([#3965](https://www.github.com/tauri-apps/tauri/pull/3965)) on 2022-09-30
+- Added methods to set the system tray title on macOS.
+  - [8f1ace77](https://www.github.com/tauri-apps/tauri/commit/8f1ace77956ac3477826ceb059a191e55b3fff93) feat: expose `set_title` for MacOS tray ([#5182](https://www.github.com/tauri-apps/tauri/pull/5182)) on 2022-09-30
+- Added the `user_agent` option when creating a window.
+  - [a6c94119](https://www.github.com/tauri-apps/tauri/commit/a6c94119d8545d509723b147c273ca5edfe3729f) feat(core): expose user_agent to window config ([#5317](https://www.github.com/tauri-apps/tauri/pull/5317)) on 2022-10-02
+
 ## \[1.1.1]
 
 - Add missing allowlist config for `set_cursor_grab`, `set_cursor_visible`, `set_cursor_icon` and `set_cursor_position` APIs.

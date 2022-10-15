@@ -1,5 +1,19 @@
 # Changelog
 
+## \[1.2.0]
+
+- Validate `pacakge > productName` in the tauri config and produce errors if it contains one of the following characters `/\:*?\"<>|`
+  - [b9316a64](https://www.github.com/tauri-apps/tauri/commit/b9316a64eaa9348c79efafb8b94960d9b4d5b27a) fix(cli): validate `productName` in config, closes [#5233](https://www.github.com/tauri-apps/tauri/pull/5233) ([#5262](https://www.github.com/tauri-apps/tauri/pull/5262)) on 2022-09-28
+- Hot-reload the frontend when `tauri.conf.json > build > devPath` points to a directory.
+  - [54c337e0](https://www.github.com/tauri-apps/tauri/commit/54c337e06f3bc624c4780cf002bc54790f446c90) feat(cli): hotreload support for frontend static files, closes [#2173](https://www.github.com/tauri-apps/tauri/pull/2173) ([#5256](https://www.github.com/tauri-apps/tauri/pull/5256)) on 2022-09-28
+- Expose `TAURI_TARGET_TRIPLE` to `beforeDevCommand`, `beforeBuildCommand` and `beforeBundleCommand`
+  - [a4aec9f0](https://www.github.com/tauri-apps/tauri/commit/a4aec9f0a864ec6d7712db8bd50989d9c2e2fd2e) feat(cli): expose `TAURI_TARGET_TRIPLE` to before\*Commands, closes [#5091](https://www.github.com/tauri-apps/tauri/pull/5091) ([#5101](https://www.github.com/tauri-apps/tauri/pull/5101)) on 2022-10-03
+- Set `TAURI_PLATFORM_TYPE`, `TAURI_FAMILY`, `TAURI_ARCH` and `TAURI_PLATFORM` env vars for hook commands to based on the app not the cli.
+  - [a4aec9f0](https://www.github.com/tauri-apps/tauri/commit/a4aec9f0a864ec6d7712db8bd50989d9c2e2fd2e) feat(cli): expose `TAURI_TARGET_TRIPLE` to before\*Commands, closes [#5091](https://www.github.com/tauri-apps/tauri/pull/5091) ([#5101](https://www.github.com/tauri-apps/tauri/pull/5101)) on 2022-10-03
+- - [7d9aa398](https://www.github.com/tauri-apps/tauri/commit/7d9aa3987efce2d697179ffc33646d086c68030c) feat: bump MSRV to 1.59 ([#5296](https://www.github.com/tauri-apps/tauri/pull/5296)) on 2022-09-28
+- Add `tauri.conf.json > bundle > publisher` field to specify the app publisher.
+  - [628285c1](https://www.github.com/tauri-apps/tauri/commit/628285c1cf43f03ed62378f3b6cc0c991317526f) feat(bundler): add `publisher` field, closes [#5273](https://www.github.com/tauri-apps/tauri/pull/5273) ([#5283](https://www.github.com/tauri-apps/tauri/pull/5283)) on 2022-09-28
+
 ## \[1.1.1]
 
 - Fix wrong cli metadata that caused new projects (created through `tauri init`) fail to build

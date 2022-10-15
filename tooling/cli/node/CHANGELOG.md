@@ -1,5 +1,10 @@
 # Changelog
 
+## \[1.1.2]
+
+- Fix crash when nodejs binary has the version in its name, for example `node18`
+  - [095b1862](https://www.github.com/tauri-apps/tauri/commit/095b18620bbe5a3c06155f39bb620481702e5094) fix(cli.js): fix invoking cli from a node shim, closes [#5343](https://www.github.com/tauri-apps/tauri/pull/5343) ([#5345](https://www.github.com/tauri-apps/tauri/pull/5345)) on 2022-10-04
+
 ## \[1.1.1]
 
 - Fix wrong cli metadata that caused new projects (created through `tauri init`) fail to build

@@ -1,5 +1,27 @@
 # Changelog
 
+## \[0.12.0]
+
+- Readd the option to create an unfocused window via the `focused` method. The `focus` function has been deprecated.
+  - [4036e15f](https://www.github.com/tauri-apps/tauri/commit/4036e15f5af933bdc0d0913508b5103958afc143) feat(core): reimplement window initial focus flag, closes [#5120](https://www.github.com/tauri-apps/tauri/pull/5120) ([#5338](https://www.github.com/tauri-apps/tauri/pull/5338)) on 2022-10-08
+- Add `hidden_title` option for macOS windows.
+  - [321f3fed](https://www.github.com/tauri-apps/tauri/commit/321f3fed19df40c1223099bce953332b7f00f7a9) feat(macos): `title_bar_style` and `hidden_title` window options, closes [#2663](https://www.github.com/tauri-apps/tauri/pull/2663) ([#3965](https://www.github.com/tauri-apps/tauri/pull/3965)) on 2022-09-30
+- Added `Runtime::show()`, `RuntimeHandle::show()`, `Runtime::hide()`, `RuntimeHandle::hide()` for hiding/showing the entire application on macOS.
+  - [39bf895b](https://www.github.com/tauri-apps/tauri/commit/39bf895b73ec6b53f5758815396ba85dda6b9c67) feat(macOS): Add application `show` and `hide` methods ([#3689](https://www.github.com/tauri-apps/tauri/pull/3689)) on 2022-10-03
+- Fix regression in `SystemTray::with_menu_on_left_click`
+  - [f8a3becb](https://www.github.com/tauri-apps/tauri/commit/f8a3becb287942db7f7b551b5db6aeb5a2e939ee) feat(core): add option to disable tray menu on left click, closes [#4584](https://www.github.com/tauri-apps/tauri/pull/4584) ([#4587](https://www.github.com/tauri-apps/tauri/pull/4587)) on 2022-07-05
+  - [7bbf167c](https://www.github.com/tauri-apps/tauri/commit/7bbf167c1c84493ea6e2353f720edafd7daa47e4) Apply Version Updates From Current Changes ([#4560](https://www.github.com/tauri-apps/tauri/pull/4560)) on 2022-07-06
+  - [63011ca8](https://www.github.com/tauri-apps/tauri/commit/63011ca84e7a22c8c0d8bd1c1be6592140f93ff2) fix(macos): fix regression in `with_menu_on_left_click`, closes [#5220](https://www.github.com/tauri-apps/tauri/pull/5220) ([#5235](https://www.github.com/tauri-apps/tauri/pull/5235)) on 2022-09-30
+- - [7d9aa398](https://www.github.com/tauri-apps/tauri/commit/7d9aa3987efce2d697179ffc33646d086c68030c) feat: bump MSRV to 1.59 ([#5296](https://www.github.com/tauri-apps/tauri/pull/5296)) on 2022-09-28
+- Add `title_bar_style` option for macOS windows.
+  - [321f3fed](https://www.github.com/tauri-apps/tauri/commit/321f3fed19df40c1223099bce953332b7f00f7a9) feat(macos): `title_bar_style` and `hidden_title` window options, closes [#2663](https://www.github.com/tauri-apps/tauri/pull/2663) ([#3965](https://www.github.com/tauri-apps/tauri/pull/3965)) on 2022-09-30
+- Fix regression introduce in tauri@1.1 which prevented removing tray icon when the app exits on Windows.
+  - [f756cd5e](https://www.github.com/tauri-apps/tauri/commit/f756cd5e7ecc86f178f8d602eded1e1b6ecb51f3) fix(core): wait for tray cleanup before exiting app, closes [#5244](https://www.github.com/tauri-apps/tauri/pull/5244) ([#5245](https://www.github.com/tauri-apps/tauri/pull/5245)) on 2022-10-04
+- Added methods to set the system tray title on macOS.
+  - [8f1ace77](https://www.github.com/tauri-apps/tauri/commit/8f1ace77956ac3477826ceb059a191e55b3fff93) feat: expose `set_title` for MacOS tray ([#5182](https://www.github.com/tauri-apps/tauri/pull/5182)) on 2022-09-30
+- Added the `user_agent` option when creating a window.
+  - [a6c94119](https://www.github.com/tauri-apps/tauri/commit/a6c94119d8545d509723b147c273ca5edfe3729f) feat(core): expose user_agent to window config ([#5317](https://www.github.com/tauri-apps/tauri/pull/5317)) on 2022-10-02
+
 ## \[0.11.1]
 
 - Add missing allowlist config for `set_cursor_grab`, `set_cursor_visible`, `set_cursor_icon` and `set_cursor_position` APIs.
